@@ -1,15 +1,10 @@
 import React from 'react';
+import { useMessageContext} from '../context/MessageContext';
 
-interface Message {
-  id: number;
-  text: string;
-}
 
-interface MessageListProps {
-  messages: Message[];
-}
+const MessageList: React.FC = () => {
+  const { messages } = useMessageContext();
 
-const MessageList: React.FC<MessageListProps> = ({ messages }) => {
   return (
     <div style={{ overflowY: 'auto', flex: 1 }}>
       {messages.map(message => (
